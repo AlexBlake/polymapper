@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poly Mapper</title>
+    <script type="text/javascript" src="assets/dist/libs.js"></script>
+
+    <link rel="stylesheet" href="assets/dist/libs.css">
+    <link rel="stylesheet" href="assets/dist/styles.css">
+
+</head>
+<body><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <div class="input-group">
+                    <input type="file" name="fileinput" id="fileinput" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" onclick="loadFile()">Load</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button style="width:100%;" class="btn btn-primary" onclick="download()">Save To File</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button style="width:100%;" class="btn btn-info" onclick="toggleDrawing(event)">Enable Drawing</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="main-map"></div>
+                <div id="tooltip"></div>
+                <div id="modal-detail" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Feature Details</h4>
+                            </div>
+                            <div class="modal-body row">
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" onclick="addDataField()">+Add Field</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/dist/app.js"></script>
+</body>
+</html>
