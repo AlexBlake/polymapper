@@ -1,5 +1,5 @@
 # PolyMapper
-Simple tool to store information mapped to geo location in a local JSON file rather than on a server.
+Simple tool to store information mapped to geo location in a local JSON file rather than on a server. See [demo](https://alexblake.github.io/polymapper/).
 
 # Usage
 - Open `index.html` in a browser
