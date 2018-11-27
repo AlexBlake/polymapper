@@ -8,16 +8,16 @@ var gulp = require('gulp'),
 gulp.task('styles', function(){
     return gulp.src('assets/css/*.css')
         .pipe(concatenate('styles.css'))
-        .pipe(gulp.dest('assets/dist/'))
+        .pipe(gulp.dest('assets/build/'))
         .pipe(minifycss())
-        .pipe(gulp.dest('assets/dist/'));
+        .pipe(gulp.dest('assets/build/'));
 });
 
 gulp.task('scripts', function(){
     return gulp.src('assets/js/*.js')
         .pipe(uglify())
         .pipe(concatenate('app.js'))
-        .pipe(gulp.dest('assets/dist/'));
+        .pipe(gulp.dest('assets/build/'));
 });
 
 gulp.task('libs-js', function(){
@@ -27,7 +27,7 @@ gulp.task('libs-js', function(){
             'node_modules/openlayers/dist/ol.js'
         ])
         .pipe(concatenate('libs.js'))
-        .pipe(gulp.dest('assets/dist/'));
+        .pipe(gulp.dest('assets/build/'));
 });
 
 gulp.task('libs-css', function(){
@@ -36,7 +36,7 @@ gulp.task('libs-css', function(){
             'node_modules/openlayers/dist/ol.css'
         ])
         .pipe(concatenate('libs.css'))
-        .pipe(gulp.dest('assets/dist/'));
+        .pipe(gulp.dest('assets/build/'));
 });
 
 gulp.task('watch', function(){
@@ -49,13 +49,13 @@ gulp.task('watch', function(){
 
 gulp.task('dist', function(){
     gulp.src([
-            'assets/dist/*',
+            'assets/build/*',
         ])
         .pipe(gulp.dest('dist/assets'));
     gulp.src([
             'index.html'
         ])
-        .pipe(replace('assets/dist/', 'assets/'))
+        .pipe(replace('assets/build/', 'assets/'))
         .pipe(gulp.dest('dist/'));
 });
 
